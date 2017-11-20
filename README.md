@@ -48,7 +48,7 @@ the output layer is one, because it's differnt with traffic sign, the output is 
 ####2. Attempts to reduce overfitting in the model
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting (0.2 of total sets is used for test, validation_split=0.2). 
-Overfitting prevent: During the process, i set the epoch=5, and find the loss and accuracy is is almost the same for the last 2 epochs, that's means it's overfitting, so i change epochs into 3 to prevent overfitting.
+Overfitting prevent: During the process, first before training the data, those data were shuffle, then i set the epoch=5, and find the loss and accuracy is is almost the same for the last 2 epochs, that's means it's overfitting, so i change epochs into 3 to prevent overfitting.
 The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 ####3. Model parameter tuning
@@ -67,6 +67,21 @@ At the last, i add the right/left side camera, flipped image as the challage tra
 The overall strategy for deriving a model architecture was to using the human driving data to train the net learn how to drive like human
 
 The first step was to use a NAVIDA architure similar to the pipeline I thought this model might be appropriate because the NAVIDA is proved to be good for training self_driving vehcle to learn how to driving (input image, output steering angle) 
+
+####2. model
+
+The final model architecture  consisted of a convolution neural network with the following layers and layer sizes:
+![image](https://github.com/Genzaiwuxian/term1-p3/blob/master/architecture.jpg)
+
+####3. Creation of the Training Set & Training Process
+
+To capture good driving behavior, I recorded one lap on track one using center lane driving. Here is an example image of center lane driving:
+![image](https://github.com/Genzaiwuxian/term1-p3/blob/master/center_2017_11_05_21_49_42_498.jpg)
+
+However i find the result doesn't work very well on the first curve, so i added some driving behavior in the corners, the images are like:
+![image](https://github.com/Genzaiwuxian/term1-p3/blob/master/center_2017_11_05_21_49_10_477.jpg)
+![image](https://github.com/Genzaiwuxian/term1-p3/blob/master/center_2017_11_05_21_49_57_311.jpg)
+finally, i find the result is ok, so i didn't add the life/right images, but i add the code in my pipeline for runing left/right cameras, and left it after this project for Amason aws ec2 service
 
 The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle nearly fell off the track, so it's better input some more images in corners to train let again, to improve the driving behavior.
 
