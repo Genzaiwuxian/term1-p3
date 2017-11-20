@@ -47,7 +47,9 @@ the output layer is one, because it's differnt with traffic sign, the output is 
 
 ####2. Attempts to reduce overfitting in the model
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (0.2 of total sets is used for test, validation_split=0.2). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different data sets to ensure that the model was not overfitting (0.2 of total sets is used for test, validation_split=0.2). 
+Overfitting prevent: During the process, i set the epoch=5, and find the loss and accuracy is is almost the same for the last 2 epochs, that's means it's overfitting, so i change epochs into 3 to prevent overfitting.
+The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 ####3. Model parameter tuning
 
